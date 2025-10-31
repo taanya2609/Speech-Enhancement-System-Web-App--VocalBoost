@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block title %}FAQs{% endblock %}
+
+{% block content %}
+    <section class="info-section">
+        <div class="container">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <p class="section-subtitle">Find answers to the most common questions about VocalBoost.</p>
+
+            <div class="faq-container">
+                <div class="faq-item content-card">
+                    <h3 class="faq-question">What kind of audio files can I upload?</h3>
+                    <p class="faq-answer">VocalBoost primarily supports WAV (.wav) and MP3 (.mp3) files. For microphone recordings, it uses the WebM format and converts it to WAV on the server for processing.</p>
+                </div>
+                
+                <div class="faq-item content-card">
+                    <h3 class="faq-question">How effective is the speech enhancement?</h3>
+                    <p class="faq-answer">Our system uses a Denoising Autoencoder, a deep learning model trained on thousands of audio samples. This allows it to intelligently remove a wide range of background noises, from static and hum to more complex environmental sounds without distorting the speaker's voice. The result is significantly clearer and more intelligible speech.</p>
+                </div>
+
+                <div class="faq-item content-card">
+                    <h3 class="faq-question">How is the confidence score calculated?</h3>
+                    <p class="faq-answer">The confidence score is a unique feature that measures the quality improvement of the audio. It's calculated by comparing the number of distinct sound peaks in the original and enhanced spectrograms. A higher score indicates a more successful and noticeable noise reduction, giving you a quick and objective measure of the enhancement's quality.</p>
+                </div>
+
+                <div class="faq-item content-card">
+                    <h3 class="faq-question">What is a spectrogram, and why is it useful?</h3>
+                    <p class="faq-answer">A spectrogram is a visual representation of the audio signal's frequencies over time. It's an incredibly useful tool for visualizing noise. On the results page, you can see how the enhancement process effectively "cleans up" the visual noise, highlighting the clarity and precision of our model's work.</p>
+                </div>
+
+                <div class="faq-item content-card">
+                    <h3 class="faq-question">How can I download the enhanced audio?</h3>
+                    <p class="faq-answer">On the results page, a dedicated audio player for the enhanced file will appear. This player includes a standard download button (three vertical dots) in the bottom-right corner. Clicking this button will allow you to save the high-quality, denoised audio file directly to your device.</p>
+                </div>
+
+                <div class="faq-item content-card">
+                    <h3 class="faq-question">Can I control the playback speed of the audio?</h3>
+                    <p class="faq-answer">Yes, the audio players on the results page are standard HTML5 players. They offer basic controls including a playback speed setting. You can adjust the speed to listen to the audio more slowly or quickly as needed.</p>
+                </div>
+
+                <div class="faq-item content-card">
+                    <h3 class="faq-question">Is the live microphone recording feature available?</h3>
+                    <p class="faq-answer">Yes, VocalBoost allows for live microphone recording directly from your web browser. This feature processes your voice in real time and is perfect for quick tests or for instantly denoising short voice notes or memos.</p>
+                </div>
+
+                <div class="faq-item content-card">
+                    <h3 class="faq-question">Is VocalBoost free to use?</h3>
+                    <p class="faq-answer">Yes, VocalBoost is designed to be accessible. The core speech enhancement features are available for free. We believe in providing a powerful tool that anyone can use to improve their audio quality without technical expertise or costly software.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+{% endblock %}

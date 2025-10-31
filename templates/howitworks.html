@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block title %}How It Works{% endblock %}
+
+{% block content %}
+    <section class="info-section">
+        <div class="container">
+            <h2 class="section-title">How It Works</h2>
+            <p class="section-subtitle">A simple breakdown of the AI-powered enhancement process.</p>
+            
+            <div class="process-flow">
+                <div class="process-step">
+                    <div class="step-icon"><i class="fas fa-1"></i></div>
+                    <h3>Input Audio</h3>
+                    <p>You provide us with a noisy audio file, either by uploading it from your device or by recording it directly using your microphone.</p>
+                </div>
+
+                <i class="fas fa-arrow-down process-arrow"></i>
+
+                <div class="process-step">
+                    <div class="step-icon"><i class="fas fa-2"></i></div>
+                    <h3>Spectrogram Conversion</h3>
+                    <p>The audio signal is first converted into a spectrogram, which is a visual map of the audio's frequency and amplitude over time. Our AI model processes this visual data more effectively than the raw audio waveform.</p>
+                </div>
+                
+                <i class="fas fa-arrow-down process-arrow"></i>
+
+                <div class="process-step">
+                    <div class="step-icon"><i class="fas fa-3"></i></div>
+                    <h3>AI Enhancement</h3>
+                    <p>The spectrogram is fed into our Denoising Autoencoder. This deep learning model is an expert at identifying noise patterns and separating them from the core speech signal, effectively learning to "see" a clean version of the audio.</p>
+                </div>
+                
+                <i class="fas fa-arrow-down process-arrow"></i>
+
+                <div class="process-step">
+                    <div class="step-icon"><i class="fas fa-4"></i></div>
+                    <h3>Audio Reconstruction</h3>
+                    <p>The clean spectrogram produced by the model is then converted back into an audible audio waveform using a sophisticated algorithm. This step ensures the final output is a high-quality, clear sound.</p>
+                </div>
+                
+                <i class="fas fa-arrow-down process-arrow"></i>
+                
+                <div class="process-step">
+                    <div class="step-icon"><i class="fas fa-5"></i></div>
+                    <h3>Results & Comparison</h3>
+                    <p>The final enhanced audio is presented for you to listen to and download. You can compare it side-by-side with your original recording and see the dramatic difference in quality on the spectrogram charts.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

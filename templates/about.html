@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}About{% endblock %}
+
+{% block content %}
+    <section class="info-section">
+        <div class="container">
+            <h2 class="section-title">About VocalBoost</h2>
+            <p class="section-subtitle">Our mission is to make clear audio accessible to everyone.</p>
+
+            <div class="content-card">
+                <h3>What is VocalBoost?</h3>
+                <p>VocalBoost is an AI-powered speech enhancement system designed to transform noisy and distorted audio recordings into clear, intelligible speech. We leverage a deep learning model to accurately identify and remove unwanted background noise, ensuring your message comes through loud and clear.</p>
+            </div>
+            
+            <div class="content-card">
+                <h3>The Technology Behind It</h3>
+                <p>At its core, VocalBoost uses a Denoising Autoencoder, a type of neural network specifically trained on a massive dataset of paired noisy and clean speech. The model learns to reconstruct the clean audio signal from a noisy input by operating on its spectrogram representation. This approach allows for highly effective noise reduction without sacrificing the natural quality of the voice.</p>
+            </div>
+
+            <div class="content-card">
+                <h3>Our Vision</h3>
+                <p>We believe that clear communication is a fundamental need. VocalBoost aims to provide an easy-to-use, accessible tool that helps podcasters, students, journalists, and anyone with a noisy recording to instantly improve their audio quality. Our goal is to empower users with professional-grade audio enhancement right from their web browser.</p>
+            </div>
+        </div>
+    </section>
+{% endblock %}

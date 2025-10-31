@@ -1,0 +1,151 @@
+{% extends "base.html" %}
+
+{% block title %}Result{% endblock %}
+
+{% block head %}
+<style>
+    .audio-player-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        margin-bottom: 40px;
+    }
+    .audio-player-card {
+        width: 100%;
+        max-width: 600px;
+    }
+    .audio-player-card h3 {
+        margin-top: 0;
+        color: var(--primary-color);
+    }
+    .audio-player-card .visualizer-container {
+        width: 100%;
+        height: 100px;
+        margin-top: 1rem;
+    }
+    .audio-player-card canvas {
+        width: 100%;
+        height: 100%;
+        border-radius: 8px;
+        background-color: var(--background-color);
+        border: 1px solid var(--border-color);
+    }
+    .spectrogram-container {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        margin-top: 20px;
+    }
+    .spectrogram-image {
+        width: 100%;
+        max-width: 800px;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px var(--shadow-color);
+    }
+    .confidence-score-container {
+        font-size: 1.2em;
+        font-weight: bold;
+        color: var(--primary-color);
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+
+</style>
+{% endblock %}
+
+{% block content %}
+    <section class="result-section">
+        <div class="container">
+            <h2 class="section-title">Your Enhanced Audio 🧠</h2>
+            <p class="section-subtitle">Compare the original and enhanced versions below.</p>
+            
+            <div class="confidence-score-container">
+                <i class="fas fa-award"></i> Confidence Score: <span id="confidence-value"></span>%
+            </div>
+            
+            <script>
+              document.addEventListener('DOMContentLoaded', () => {
+                const urlParams = new URLSearchParams(window.location.search);
+                const confidence = urlParams.get('confidence');
+                const valueSpan = document.getElementById('confidence-value');
+
+                if (confidence && !isNaN(confidence)) {
+                    valueSpan.textContent = confidence;
+                } else {
+                    valueSpan.textContent = 'N/A';
+                }
+            });
+            </script>
+    
+
+            
+            <div class="audio-player-container">
+                <div class="audio-player-card">
+                    <h3>Original Audio</h3>
+                    <audio id="original-audio" controls src="{{ original_audio }}"></audio>
+                    <div class="visualizer-container">
+                        <canvas id="original-visualizer"></canvas>
+                    </div>                
+                </div>
+                <div class="audio-player-card">
+                    <h3>Enhanced Audio</h3>
+                    <audio id="enhanced-audio" controls src="{{ enhanced_audio }}"></audio>
+                    <div class="visualizer-container">
+                        <canvas id="enhanced-visualizer"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <script src="{{ url_for('static', filename='visualizer.js') }}"></script>
+
+            <div class="spectrogram-comparison">
+                <h3 class="comparison-title">Spectrogram Comparison 📈</h3>
+                <div class="spectrogram-container">
+                    <div class="spectrogram-card">
+                        <h4>Original</h4>
+                        <img src="{{ url_for('static', filename='images/' ~ file_id ~ '_original_spec.png') }}" alt="Original Spectrogram" class="spectrogram-image">
+                    </div>
+                    <div class="spectrogram-card">
+                        <h4>Enhanced</h4>
+                        <img src="{{ url_for('static', filename='images/' ~ file_id ~ '_enhanced_spec.png') }}" alt="Enhanced Spectrogram" class="spectrogram-image">
+                    </div>
+                </div>
+            </div>
+            <div class="rating-card">
+                <h3>Rate the Enhancement!</h3>
+                <p>Did VocalBoost improve your audio? Let us know!</p>
+                <div id="rating-stars" class="rating-stars">
+                    <i class="fas fa-star" data-rating="1"></i>
+                    <i class="fas fa-star" data-rating="2"></i>
+                    <i class="fas fa-star" data-rating="3"></i>
+                    <i class="fas fa-star" data-rating="4"></i>
+                    <i class="fas fa-star" data-rating="5"></i>
+                </div>
+            </div>
+
+            <script>
+            const ratingStars = document.getElementById('rating-stars');
+            if (ratingStars) {
+                ratingStars.addEventListener('click', (e) => {
+                    const clickedStar = e.target.closest('i');
+                    if (clickedStar) {
+                        const rating = parseInt(clickedStar.getAttribute('data-rating'));
+                        const stars = ratingStars.querySelectorAll('i');
+                        stars.forEach((star) => {
+                            if (parseInt(star.getAttribute('data-rating')) <= rating) {
+                                star.classList.add('filled');
+                            } else {
+                                star.classList.remove('filled');
+                            }
+                        });
+                        alert(`Thank you for rating us ${rating} stars!`);
+                    }
+                });
+                }
+                </script>
+        </div>
+    </section>
+{% endblock %}
+

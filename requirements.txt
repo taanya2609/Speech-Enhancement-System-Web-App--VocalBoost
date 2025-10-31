@@ -1,0 +1,8 @@
+flask
+torch
+librosa
+numpy
+soundfile
+scipy
+matplotlib
+tqdm
