@@ -16,7 +16,7 @@ To design a deep learning–driven speech enhancement system that removes backgr
 ### **How to Run the Project**
 
 **Step 1: Clone or Download the Project**
-git clone https://github.com/yourusername/VocalBoost.git
+git clone https://github.com/[yourusername]/VocalBoost.git
 cd VocalBoost
 
 **Step 2: Install Dependencies**
