@@ -1,4 +1,5 @@
-**VocalBoost: Speech Enhancement System**
+#**VocalBoost: Speech Enhancement System**
+
 This project enhances speech clarity by removing background noise using a Denoising Autoencoder (DAE) model. It provides a real-time, web-based platform where users can upload or record audio, process it through a deep learning model, and receive improved, noise-free output with spectrogram comparison.
 
 ---
