@@ -22,7 +22,7 @@ To design a deep learning–driven speech enhancement system that removes backgr
 * Format: `.wav` files organized into noisy and clean directories
 
 ---
-### **Algorithm And Process Design**
+### **Algorithm And Process Design:**
 
 * Model Type: Denoising Autoencoder (Deep Generative Model)
 * Approach: Speech Enhancement using Time-Frequency Domain Features (STFT)
@@ -31,7 +31,7 @@ To design a deep learning–driven speech enhancement system that removes backgr
 * Libraries Used: PyTorch, Librosa, NumPy, Matplotlib, Flask
   
 ---
-### **Details Of Hardware And Software**
+### **Details Of Hardware And Software:**
 
 * Hardware: Computer/Server with multi-core CPU, GPU (NVIDIA CUDA supported) for deep learning model training, minimum 8GB RAM (16GB+ recommended), SSD for dataset and model storage, and microphone & speakers for recording and playback.
 * Software Requirements
