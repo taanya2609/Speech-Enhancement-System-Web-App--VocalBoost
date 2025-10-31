@@ -22,6 +22,28 @@ To design a deep learning–driven speech enhancement system that removes backgr
 * Format: `.wav` files organized into noisy and clean directories
 
 ---
+### **Algorithm And Process Design**
+
+* Model Type: Denoising Autoencoder (Deep Generative Model)
+* Approach: Speech Enhancement using Time-Frequency Domain Features (STFT)
+* Algorithm Used: Neural Network with Encoder–Decoder Architecture
+* Regression Type: Non-linear mapping (signal-to-signal regression)
+* Libraries Used: PyTorch, Librosa, NumPy, Matplotlib, Flask
+  
+---
+### **Details Of Hardware And Software**
+
+* Hardware: Computer/Server with multi-core CPU, GPU (NVIDIA CUDA supported) for deep learning model training, minimum 8GB RAM (16GB+ recommended), SSD for dataset and model storage, and microphone & speakers for recording and playback.
+* Software Requirements
+Programming Language: Python
+Frameworks & Libraries:
+PyTorch – for training the Denoising Autoencoder model
+Librosa – for audio feature extraction (spectrograms)
+FFmpeg – for audio conversion
+Flask – for backend web framework
+JavaScript (with Web Audio API) – for client-side recording & visualization
+HTML, CSS – for frontend design
+Matplotlib – for spectrogram visualization
 
 ### **Key Components:**
 
