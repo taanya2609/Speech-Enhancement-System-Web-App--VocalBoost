@@ -13,6 +13,68 @@ VocalBoost: AI-Based Speech Enhancement Using Deep Learning
 To design a deep learning–driven speech enhancement system that removes background noise from audio using a Denoising Autoencoder, integrated with a web interface for real-time enhancement, playback, and visualization.
 
 ---
+### **How to Run the Project**
+
+**Step 1: Clone or Download the Project**
+git clone https://github.com/yourusername/VocalBoost.git
+cd VocalBoost
+
+**Step 2: Install Dependencies**
+Make sure Python 3.8+ is installed. Then run:
+pip install -r requirements.txt
+
+**Step 3: Verify Project Structure**
+Ensure your directory looks like this:
+
+VocalBoost/
+├── app.py
+├── train_model.py
+├── model/
+│   └── denoising_autoencoder.pth
+├── static/
+│   ├── style.css
+│   ├── recorder.js
+│   └── spectrogram.js
+├── templates/
+│   ├── base.html
+│   ├── index.html
+│   ├── enhance.html
+│   ├── result.html
+│   ├── howitworks.html
+│   ├── about.html
+│   └── contact.html
+├── uploads/
+├── processed/
+└── utils/
+    ├── enhance_audio.py
+    └── plot_spectrogram.py
+
+
+**Step 4: Run the Flask Application**
+Execute the main file to start the web server:
+python app.py
+
+**Step 5: Access the Web Interface**
+Open your browser and go to:
+http://127.0.0.1:5000/
+
+**Step 6: Use the Application**
+* Upload a .wav,.mp3,.webm file or record live audio through your microphone.
+* Click Enhance Audio to denoise the file.
+* View before-and-after spectrograms and confidence score.
+* Download the enhanced .wav output.
+
+**Step 7 (Optional): Retrain the Model**
+To retrain the Denoising Autoencoder, run:
+python train_model.py
+
+**Make sure the dataset is organized as:**
+
+dataset/
+├── noisy_trainset_wav/
+└── clean_trainset_wav/
+
+---
 
 ### **Dataset Details:**
 
