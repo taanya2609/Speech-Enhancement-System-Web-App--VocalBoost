@@ -45,6 +45,7 @@ JavaScript (with Web Audio API) – for client-side recording & visualization
 HTML, CSS – for frontend design
 Matplotlib – for spectrogram visualization
 
+---
 ### **Key Components:**
 
 **1. Dataset Preparation**
